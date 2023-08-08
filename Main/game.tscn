@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://pkpcp7hwp6yp"]
+
+[ext_resource type="Script" path="res://Main/game.gd" id="1_8fqbr"]
+[ext_resource type="PackedScene" uid="uid://cgru5idrd87ga" path="res://Main/gameover_message.tscn" id="2_fifru"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8fqbr")
+
+[node name="Board" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_constants/separation = 0
+
+[node name="Row0" type="HBoxContainer" parent="Board"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Button0" type="TextureButton" parent="Board/Row0"]
+layout_mode = 2
+
+[node name="Button1" type="TextureButton" parent="Board/Row0"]
+layout_mode = 2
+
+[node name="Button2" type="TextureButton" parent="Board/Row0"]
+layout_mode = 2
+
+[node name="Row1" type="HBoxContainer" parent="Board"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Button3" type="TextureButton" parent="Board/Row1"]
+layout_mode = 2
+
+[node name="Button4" type="TextureButton" parent="Board/Row1"]
+layout_mode = 2
+
+[node name="Button5" type="TextureButton" parent="Board/Row1"]
+layout_mode = 2
+
+[node name="Row2" type="HBoxContainer" parent="Board"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Button6" type="TextureButton" parent="Board/Row2"]
+layout_mode = 2
+
+[node name="Button7" type="TextureButton" parent="Board/Row2"]
+layout_mode = 2
+
+[node name="Button8" type="TextureButton" parent="Board/Row2"]
+layout_mode = 2
+
+[node name="GameoverMessage" parent="." instance=ExtResource("2_fifru")]
+layout_mode = 1
+
+[connection signal="button_up" from="Board/Row0/Button0" to="." method="_on_button_0_button_up"]
+[connection signal="button_up" from="Board/Row0/Button1" to="." method="_on_button_1_button_up"]
+[connection signal="button_up" from="Board/Row0/Button2" to="." method="_on_button_2_button_up"]
+[connection signal="button_up" from="Board/Row1/Button3" to="." method="_on_button_3_button_up"]
+[connection signal="button_up" from="Board/Row1/Button4" to="." method="_on_button_4_button_up"]
+[connection signal="button_up" from="Board/Row1/Button5" to="." method="_on_button_5_button_up"]
+[connection signal="button_up" from="Board/Row2/Button6" to="." method="_on_button_6_button_up"]
+[connection signal="button_up" from="Board/Row2/Button7" to="." method="_on_button_7_button_up"]
+[connection signal="button_up" from="Board/Row2/Button8" to="." method="_on_button_8_button_up"]
+[connection signal="button_up" from="GameoverMessage/Container/Button" to="." method="_on_button_button_up"]
+
+[editable path="GameoverMessage"]
